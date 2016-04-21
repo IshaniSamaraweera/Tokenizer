@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 6.4.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="Start">
+			<x>117.0</x>
+			<y>283.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="Q1">
+			<x>183.0</x>
+			<y>151.0</y>
+		</state>
+		<state id="2" name="Q6">
+			<x>377.0</x>
+			<y>347.0</y>
+		</state>
+		<state id="3" name="Q4">
+			<x>613.0</x>
+			<y>152.0</y>
+			<label>Float</label>
+		</state>
+		<state id="4" name="Q5">
+			<x>807.0</x>
+			<y>173.0</y>
+			<label>Genarate Token</label>
+		</state>
+		<state id="5" name="End">
+			<x>738.0</x>
+			<y>369.0</y>
+			<final/>
+		</state>
+		<state id="6" name="Q3">
+			<x>393.0</x>
+			<y>159.0</y>
+		</state>
+		<state id="7" name="Q8">
+			<x>265.0</x>
+			<y>464.0</y>
+		</state>
+		<state id="8" name="Q2">
+			<x>386.0</x>
+			<y>48.0</y>
+			<label>Integer</label>
+		</state>
+		<state id="9" name="Q7">
+			<x>538.0</x>
+			<y>499.0</y>
+			<label>Text</label>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>digit</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>9</to>
+			<read>single quote</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>4</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>7</from>
+			<to>9</to>
+			<read>double quote</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>5</to>
+			<read>EOF</read>
+		</transition>
+		<transition>
+			<from>7</from>
+			<to>7</to>
+			<read>not(double quote | EOF)</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>4</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>5</to>
+			<read>not(space or newline or tab or digit)</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>6</to>
+			<read>decimal point</read>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>3</to>
+			<read>space or newline or tab</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>8</to>
+			<read>space or newline or tab</read>
+		</transition>
+		<transition>
+			<from>8</from>
+			<to>4</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>7</to>
+			<read>double quote</read>
+		</transition>
+		<transition>
+			<from>7</from>
+			<to>5</to>
+			<read>EOF</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>not(single quote or EOF)</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>5</to>
+			<read>EOF</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>5</to>
+			<read>not(space or newline or tab or digit or decimal point</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read>single quote</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>0</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>digit</read>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>6</to>
+			<read>digit</read>
+		</transition>
+	</automaton>
+</structure>
